@@ -1,3 +1,4 @@
 FROM tomcat:8
 LABEL app=my-app
-COPY target/*.jar /usr/local/tomcat/webapps/
+COPY target/*.war /home/ubuntu/
+CMD ["java","-jar","/home/ubuntu/webapp.war"]
