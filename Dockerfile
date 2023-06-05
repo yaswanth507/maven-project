@@ -2,5 +2,6 @@ FROM tomcat:8
 LABEL app=my-app
 RUN pwd
 RUN ls -la
-COPY /var/lib/jenkins/workspace/pipeline/webapp/target/webapp.war /home/ubuntu/
-CMD ["java","-jar","/home/ubuntu/webapp.war"]
+ADD ./target/webapp.war /usr/local/tomcat/webapps
+EXPOSE 8081
+CMD ["catalina.sh", "run"]
