@@ -1,4 +1,8 @@
 pipeline {
+ environment {
+registry = "yashu507"
+registryCredential = 'dockerhub'
+ }  
     agent any
     tools {
   maven 'Maven 3'
@@ -24,9 +28,8 @@ pipeline {
         }
       stage('Docker Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'Docker, passwordVariable: 'dockerpwd', usernameVariable: 'dockerpwd')]) {
-                sh 'docker login -u $dockerpwd -p $dockerpwd $DOCKER_REGISTRY'
-                 
+                script {
+                docker.withRegistry( '', registryCredential ) {
           }
                   sh 'docker push yashu507/my-app-1.0'
          } 
