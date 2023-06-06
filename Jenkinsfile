@@ -37,4 +37,5 @@ registryCredential = 'dockerhub'
         
       } 
       }
+}
       
