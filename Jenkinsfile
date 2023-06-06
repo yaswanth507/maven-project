@@ -31,7 +31,7 @@ pipeline {
                   sh 'docker push yashu507/my-app-1.0'
          } 
          }
-        }
+        
       } 
       }
       
