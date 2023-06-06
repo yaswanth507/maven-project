@@ -36,7 +36,15 @@ registryCredential = 'dockerhub'
          } 
          }
         
-      } 
+      }
+      stage('Docker Pull') {
+            steps {
+      sshagent(['deploy']) {
+       sh 'sudo docker pull yashu507/myapp'
+      
+}
+            }
+      }
       }
 }
       
