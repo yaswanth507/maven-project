@@ -24,13 +24,14 @@ pipeline {
         }
       stage('Docker Push') {
             steps {
+                withTTY {
                 withCredentials([string(credentialsId: 'dockerpwd', variable: 'Docker ')]) {
-                  sh 'docker login -u yashu507 p ${dockerpwd} --password-stdin'
+                  sh 'docker login -u yashu507 p ${dockerpwd}'
           }
                   sh 'docker push yashu507/my-app-1.0'
          } 
          }
         }
-        
+      } 
       }
       
