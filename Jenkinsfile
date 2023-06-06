@@ -31,7 +31,7 @@ registryCredential = 'dockerhub'
                 script {
                 docker.withRegistry( '', registryCredential ) {
           }
-                  sh 'docker push yashu507/my-app-1.0'
+                  sh 'docker push yashu507/myapp'
          } 
          }
         
