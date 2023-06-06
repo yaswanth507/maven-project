@@ -24,8 +24,8 @@ pipeline {
         }
       stage('Docker Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerpwd', passwordVariable: 'dockerpwd', usernameVariable: 'dockerpwd')]) {
-                sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY'
+                withCredentials([usernamePassword(credentialsId: 'Docker, passwordVariable: 'dockerpwd', usernameVariable: 'dockerpwd')]) {
+                sh 'docker login -u $dockerpwd -p $dockerpwd $DOCKER_REGISTRY'
                  
           }
                   sh 'docker push yashu507/my-app-1.0'
