@@ -23,7 +23,7 @@ registryCredential = 'dockerhub'
         
        stage('Docker Build') {
             steps {
-                sh 'docker build -t myapp .'
+                sh 'docker build -t yashu507/myapp .'
             }
         }
       stage('Docker Push') {
