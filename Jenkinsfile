@@ -41,6 +41,7 @@ registryCredential = 'dockerhub'
             steps {
       sshagent(['deploy']) {
        sh 'docker pull yashu507/myapp:latest'
+       sh 'sleep 40'
       
 }
             }
