@@ -40,7 +40,7 @@ registryCredential = 'dockerhub'
       stage('Docker Deploy') {
             steps {
       sshagent(['deploy']) {
-       sh 'docker run -d --name yashu507/myapp:latest -p 80:81 yashu507/myapp:latest'
+       sh 'docker run --name yashu507/myapp:latest -d -p 80:81 yashu507/myapp:latest'
       
 }
             }
